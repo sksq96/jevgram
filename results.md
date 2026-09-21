@@ -65,6 +65,13 @@ against roughly **$0.05 per Pangram 3 call** in the writing lane's ledger — ab
 ~0.4s and 55-60 texts/second sustained. And it answers 27 other questions about the same text in the
 same call, which a detector API cannot.
 
+Two prices appear in this repo and they are different calls, not a discrepancy. $0.000069 is a text
+in *this study*: one call carrying all 28 questions. The live checker at
+[jevgram.vercel.app](https://jevgram.vercel.app) asks only the one Noul above, so it bills
+**~$0.00002 a check** — measured at $0.000014 for 30 words / 333 tokens and $0.000016 for 80 words /
+392 tokens, and the page prints the exact figure under every score. Every price in the launch
+frames is the study's.
+
 ## Where Jev beats and loses, by generator
 
 Instruction-tuned models are easy; base models are not. Every family splits the same way:
