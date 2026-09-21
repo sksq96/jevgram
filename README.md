@@ -4,7 +4,8 @@ Does Jev — TypeSafe's System One model, typed judgments in ~110ms at $0.042/Mt
 AI-written text as well as Pangram does? Ask it one Noul per text ("was this written by an AI
 language model?"), score it on public benchmarks, report it against Pangram's published numbers.
 
-**[results.md](results.md)** has the answer and every table. Short version: 0.891 AUC on RAID,
+**Try it: [jevgram.vercel.app](https://jevgram.vercel.app)** — one box, one question, ~$0.00002 a
+check. **[results.md](results.md)** has the answer and every table. Short version: 0.891 AUC on RAID,
 0.992 on HC3, 0.787 on MAGE, 0.698 under 50 words, at $0.000069 a text — a useful ranker, not a
 detector you could deploy at Pangram's false-positive budget. The whole study cost **$0.97**.
 
@@ -29,6 +30,21 @@ committed.
 Five files do the work: `raid_pull.py` (stream and slice RAID), `data.py` (build the sample),
 `jev.py` (API client + spend log), `run.py` (the questions and the run), `score.py` (all the
 arithmetic and the chart).
+
+## The page
+
+`web/` is the whole interface: `index.html` (one textbox, one button, his theme via
+[shubham.lol/theme.css](https://shubham.lol/theme.css)) and `api/check.js`, a Vercel function that
+asks Jev the one Noul this repo measured and nothing else. The key lives in the function's
+environment (`TYPESAFE_API_KEY`), never in the client. Rate limits are per IP — 10 checks per 10
+minutes, 60 a day, 1,500 a day per instance — and the text is capped at 8,000 characters, so a
+public link cannot run up a bill: the ceiling is a few cents a day. The page prints the AUCs, the
+under-50-words caveat and the exact cost of each check, because a score with no error bars is the
+thing this repo exists to argue against.
+
+<img src="web/screenshot.png" width="320" alt="the page at 390px">
+
+Deploy: `cd web && vercel --prod` (project `jevgram`, env var set once with `vercel env add`).
 
 ## The data
 

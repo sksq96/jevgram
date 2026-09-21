@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>jevgram — ai or not, one question</title>
+<meta name="description" content="Paste text, ask Jev one typed question: was this written by an AI language model? Measured on RAID, HC3 and MAGE.">
+<script src="https://shubham.lol/theme.js"></script>
+<link rel="stylesheet" href="https://shubham.lol/theme.css">
+<style>
+  .wrap{max-width:42rem}
+  textarea.input{min-height:180px;resize:vertical;line-height:1.5;font-family:var(--sans)}
+  .score{font-size:56px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+  .verdict{font-size:17px;font-weight:700;margin-top:6px}
+  .bar{height:6px;background:var(--line);border-radius:999px;overflow:hidden;margin:14px 0 10px}
+  .bar>i{display:block;height:100%;background:var(--fg);width:0;transition:width .25s}
+  .ticks{display:flex;justify-content:space-between;font-size:13px;color:var(--mute)}
+  .facts>div{padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;justify-content:space-between}
+  .facts>div:last-child{border-bottom:0}
+  .facts b{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .num{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body class="wrap">
+
+<header class="label-row" style="margin-bottom:22px">
+  <b>jevgram</b>
+  <nav class="pills" style="align-items:center">
+    <a href="https://github.com/sksq96/jevgram" class="small">repo</a>
+    <button class="dot" onclick="toggleTheme()" aria-label="toggle theme"></button>
+  </nav>
+</header>
+
+<main class="stack">
+
+  <section class="stack">
+    <p>paste text. it goes to <a href="https://typesafe.ai">jev</a> with one typed question —
+      <i>“was this written by an AI language model?”</i> — and what comes back is the probability.
+      no training, no classifier on top, one call.</p>
+    <textarea id="t" class="input" placeholder="paste a paragraph…" autofocus></textarea>
+    <div class="label-row">
+      <div class="pills">
+        <button id="go" class="pill fill">check</button>
+        <button id="clear" class="pill ghost">clear</button>
+      </div>
+      <span id="wc" class="small mute num">0 words</span>
+    </div>
+  </section>
+
+  <section id="out" class="card" hidden>
+    <div class="label">jev says</div>
+    <div class="score num" id="score">—</div>
+    <div class="bar"><i id="fill"></i></div>
+    <div class="ticks"><span>human</span><span>0.6</span><span>0.8</span><span>model</span></div>
+    <div class="verdict" id="verdict"></div>
+    <p class="small mute" id="reading" style="margin-top:6px"></p>
+    <p class="small mute" id="meta" style="margin-top:10px"></p>
+    <p class="small" id="warn" style="margin-top:10px" hidden></p>
+  </section>
+
+  <section class="card facts small">
+    <div class="label" style="margin-bottom:4px">what the number is worth</div>
+    <div><span>AUC, RAID (11 generators, 8 domains)</span><b>0.891</b></div>
+    <div><span>AUC, HC3 (chatgpt vs human QA)</span><b>0.992</b></div>
+    <div><span>AUC, MAGE (in the wild)</span><b>0.787</b></div>
+    <div><span>AUC, real texts under 50 words</span><b>0.698</b></div>
+    <div><span>cost per check</span><b>~$0.00002</b></div>
+  </section>
+
+  <section class="stack small mute">
+    <p><b class="mute">read it as an ordering, not a verdict.</b> on the 5,995 benchmark texts, a
+      score under 0.6 was human 82% of the time, 0.6–0.7 was a coin (31% model), 0.7–0.8 leaned
+      model (66%), and 0.8 and up was model 99% of the time. the scale is not a calibrated
+      probability: 0.5 does not mean half.</p>
+    <p><b class="mute">under 50 words it is noise.</b> 0.61 AUC between 25 and 50 words, where the
+      average AI text scores 0.57 and the average human text 0.52. pangram declines these by its
+      own scope statement; jev answers anyway, and the answer means little.</p>
+    <p><b class="mute">this is not a pangram replacement.</b> held at a 1% false-positive rate it
+      catches 62% of RAID's AI text; pangram publishes a 0.34% miss rate at a 0.004% false-positive
+      rate. it flagged half of the real doctors' answers in HC3 as machine-written. never decide
+      anything about a person with this.</p>
+    <p>full method, tables and the adversarial run:
+      <a href="https://github.com/sksq96/jevgram/blob/master/results.md">results.md</a> ·
+      7,139 texts, $0.97 of jev.</p>
+  </section>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const t = $("#t"), out = $("#out");
+const words = s => (s.trim().match(/\S+/g) || []).length;
+const wc = () => $("#wc").textContent = words(t.value) + " words";
+t.addEventListener("input", wc); wc();
+$("#clear").onclick = () => { t.value = ""; wc(); out.hidden = true; t.focus(); };
+
+$("#go").onclick = async () => {
+  const text = t.value.trim();
+  if (!text) return;
+  $("#go").disabled = true; $("#go").textContent = "…";
+  try {
+    const r = await fetch("/api/check", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({text})
+    });
+    const d = await r.json();
+    out.hidden = false;
+    if (!r.ok) {
+      $("#score").textContent = "—"; $("#fill").style.width = "0";
+      $("#verdict").textContent = d.error || "something broke";
+      $("#reading").textContent = ""; $("#meta").textContent = ""; $("#warn").hidden = true;
+      return;
+    }
+    $("#score").textContent = d.score.toFixed(2);
+    $("#fill").style.width = (d.score * 100).toFixed(0) + "%";
+    $("#verdict").textContent = d.verdict;
+    $("#reading").textContent = d.reading;
+    $("#meta").textContent = `${d.words} words · ${d.tokens} tokens · $${d.cost.toFixed(6)} · ${d.ms} ms`;
+    $("#warn").hidden = !d.warn; $("#warn").textContent = d.warn || "";
+  } catch (e) {
+    out.hidden = false; $("#verdict").textContent = "network error";
+  } finally {
+    $("#go").disabled = false; $("#go").textContent = "check";
+  }
+};
+t.addEventListener("keydown", e => { if ((e.metaKey || e.ctrlKey) && e.key === "Enter") $("#go").click(); });
+</script>
+</body>
+</html>
