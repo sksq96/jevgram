@@ -1,0 +1,12 @@
+data/*.jsonl
+data/sample.parquet
+data/dev.parquet
+data/raid_raw.parquet
+data/hc3_all.jsonl
+data/mage_test.csv
+data/*.log
+
+!data/spend.jsonl
+__pycache__/
+KICKOFF.md
+data/handset.jsonl
