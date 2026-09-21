@@ -44,6 +44,11 @@ thing this repo exists to argue against.
 
 <img src="web/screenshot.png" width="320" alt="the page at 390px">
 
+`/frames` (`web/frames/index.html`) is the launch-review page: the five thread frames at full
+width with the draft each one carries, a horizontal/vertical toggle that renders whichever set is
+present, and nothing posted. Drop new art in `web/frames/h/` or `web/frames/v/` and redeploy; the
+page picks it up.
+
 Deploy: `cd web && vercel --prod` (project `jevgram`, env var set once with `vercel env add`).
 
 ## The data

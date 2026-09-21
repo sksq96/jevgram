@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>jevgram — launch frames</title>
+<meta name="description" content="The five frames for the jevgram thread, with the draft each one goes with.">
+<script src="https://shubham.lol/theme.js"></script>
+<link rel="stylesheet" href="https://shubham.lol/theme.css">
+<style>
+  .wrap{max-width:42rem}
+  figure{margin:0}
+  .shot{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;display:block}
+  .frame + .frame{margin-top:34px}
+  .tweet{white-space:pre-wrap;margin-top:12px;font-size:15px;font-weight:500}
+  .alt{margin-top:8px}
+  .n{font-variant-numeric:tabular-nums}
+  .empty{border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center}
+</style>
+</head>
+<body class="wrap">
+
+<header class="label-row" style="margin-bottom:22px">
+  <b><a href="/" style="text-decoration:none">jevgram</a></b>
+  <nav class="pills" style="align-items:center">
+    <a href="/" class="small">check</a>
+    <a href="https://github.com/sksq96/jevgram" class="small">repo</a>
+    <button class="dot" onclick="toggleTheme()" aria-label="toggle theme"></button>
+  </nav>
+</header>
+
+<main class="stack">
+  <section class="stack">
+    <p>five frames for the launch thread, in posting order, each with the draft it carries.
+      nothing is posted. numbers all from
+      <a href="https://github.com/sksq96/jevgram/blob/master/results.md">results.md</a>.</p>
+    <div class="pills">
+      <button class="pill fill" id="b-h" onclick="show('h')">horizontal</button>
+      <button class="pill ghost" id="b-v" onclick="show('v')">vertical</button>
+    </div>
+  </section>
+
+  <section id="frames" class="stack"></section>
+
+  <section class="small mute">
+    <p>the project name appears nowhere in the art, so a rename changes the copy only.</p>
+  </section>
+</main>
+
+<script>
+// Posting order, not file order. Copy is verbatim from the frames lane's tweets.md.
+const FRAMES = [
+  {n: "1/5", file: "1-the-question.png",
+   tweet: `spent a weekend on one question: can a single yes/no call do what pangram does?
+
+one question per text — "written by an ai model?" — and the probability that comes back is the score. no training, no classifier, one api call. 7,139 texts for 97 cents.`,
+   alt: "a hand-drawn sheet of paper with a speech bubble asking “written by an ai model?”, answered with a red 0.87."},
+  {n: "2/5", file: "3-the-aucs.png",
+   tweet: `it ranks well. 0.992 auc on hc3, 0.891 on raid, 0.787 on mage, zero training.
+
+where it wins isn't accuracy — $0.000069 a text, ~730x cheaper than a pangram call, and it answers 27 other questions about the same text in the same call.`,
+   alt: "three hand-drawn bars labelled hc3 0.992, raid 0.891, mage 0.787."},
+  {n: "3/5", file: "2-the-band.png",
+   tweet: `but the probability is an ordering, not a rate. a score of 0.5 means a 21% chance the text is ai. break-even is 0.72. nearly every mistake lives between 0.65 and 0.85.
+
+at a 1% false-positive rate it catches 62% of raid's ai text. pangram publishes 0.34% misses at 0.004% false positives. that's the gap, and it's two orders of magnitude.`,
+   alt: "a hand-drawn 0-to-1 number line with the 0.65-0.85 stretch inked red and labelled “every mistake lives here”."},
+  {n: "4/5", file: "4-short-text.png",
+   tweet: `under 50 words it stops working. auc 0.698 — mean score for ai text 0.57, for human text 0.52. it doesn't refuse, it just guesses.
+
+the surprise went the other way: adversarial attacks do nothing to it. paraphrase costs 0.005 auc. synonym substitution makes ai text *more* detectable, because a thesaurus pass pushes prose further into the register it keys on.`,
+   alt: "a full page with a green check beside a 40-word scrap with a red X over it."},
+  {n: "5/5", file: "5-verdict-square.png",
+   tweet: `verdict: a good ranker, not a detector.
+
+useful as a cheap first pass in front of something expensive — escalate only the 0.65-0.85 band and you cover a quarter of the texts for ~$0.25 per thousand.
+
+not something to put in front of a student essay.`,
+   alt: "a black card with a yellow gauge, needle swung toward “machine”, reading “a good ranker. not a detector.”"},
+];
+
+const el = document.getElementById("frames");
+
+function show(set) {
+  document.getElementById("b-h").className = "pill " + (set === "h" ? "fill" : "ghost");
+  document.getElementById("b-v").className = "pill " + (set === "v" ? "fill" : "ghost");
+  el.innerHTML = "";
+  Promise.all(FRAMES.map(f => fetch(`/frames/${set}/${f.file}`, {method: "HEAD"})
+    .then(r => r.ok).catch(() => false))).then(found => {
+    if (!found.some(Boolean)) {
+      el.innerHTML = `<div class="empty small mute">the ${set === "v" ? "vertical" : "horizontal"}
+        set is not in yet. the frames lane is drawing it; this page picks the images up as soon as
+        they land.</div>`;
+      return;
+    }
+    FRAMES.forEach((f, i) => {
+      if (!found[i]) return;
+      const fig = document.createElement("figure");
+      fig.className = "frame";
+      fig.innerHTML = `<div class="label n">${f.n}</div>
+        <img class="shot" src="/frames/${set}/${f.file}" alt="${f.alt}" loading="lazy">
+        <figcaption><p class="tweet">${f.tweet}</p>
+        <p class="alt small mute">alt: ${f.alt}</p></figcaption>`;
+      el.appendChild(fig);
+    });
+  });
+}
+show("h");
+</script>
+</body>
+</html>
