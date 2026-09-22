@@ -15,6 +15,7 @@
   .tweet{white-space:pre-wrap;margin-top:12px;font-size:15px;font-weight:500}
   .alt{margin-top:8px}
   .n{font-variant-numeric:tabular-nums}
+  .n .id{text-transform:none;font-family:var(--mono);letter-spacing:0}
   .empty{border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center}
 </style>
 </head>
@@ -31,8 +32,10 @@
 
 <main class="stack">
   <section class="stack">
-    <p>five frames for the launch thread, in posting order, each with the draft it carries.
-      nothing is posted. the verticals are re-compositions, not crops. numbers all from
+    <p>five frames for the launch thread, in posting order. the line under each one is the draft
+      as it stands in the deck right now, from the <span class="mono">jevgram</span> batch — it
+      changes when the row changes, and nothing here is posted. the verticals are re-compositions,
+      not crops. numbers behind the art are all from
       <a href="https://github.com/sksq96/jevgram/blob/master/results.md">results.md</a>.</p>
     <div class="pills">
       <button class="pill fill" id="b-h" onclick="show('h')">horizontal</button>
@@ -48,35 +51,26 @@
 </main>
 
 <script>
-// Posting order, not file order. Copy is verbatim from the frames lane's tweets.md.
+// Posting order, not file order. The line under each frame is the current deck row
+// (console-data/drafts.json, batch "jevgram"), verbatim; alt text stays the frames
+// lane's. Four rows for five frames: short-text has no row, and says so rather than
+// carrying an invented line.
 const FRAMES = [
-  {n: "1/5", file: {h: "1-the-question.png", v: "1-the-question.png"},
-   tweet: `spent a weekend on one question: can a single yes/no call do what pangram does?
-
-one question per text — "written by an ai model?" — and the probability that comes back is the score. no training, no classifier, one api call. 7,139 texts for 97 cents.`,
-   alt: "a hand-drawn sheet of paper with a speech bubble asking “written by an ai model?”, answered with a red 0.87."},
-  {n: "2/5", file: {h: "3-the-aucs.png",     v: "3-the-aucs.png"},
-   tweet: `it ranks well. 0.992 auc on hc3, 0.891 on raid, 0.787 on mage, zero training.
-
-where it wins isn't accuracy — $0.000069 a text, ~730x cheaper than a pangram call, and it answers 27 other questions about the same text in the same call.`,
+  {n: "#62", cid: "1a0c6519165", file: {h: "1-the-question.png", v: "1-the-question.png"},
+   line: "turns out you can ask a model whether a model wrote it, and it mostly knows.",
+   alt: "a hand-drawn sheet of paper with a speech bubble asking \u201cwritten by an ai model?\u201d, answered with a red 0.87."},
+  {n: "#63", cid: "1a0c6519166", file: {h: "3-the-aucs.png", v: "3-the-aucs.png"},
+   line: "the ranking was never the expensive part.",
    alt: "three hand-drawn bars labelled hc3 0.992, raid 0.891, mage 0.787."},
-  {n: "3/5", file: {h: "2-the-band.png",     v: "2-the-band.png"},
-   tweet: `but the probability is an ordering, not a rate. a score of 0.5 means a 21% chance the text is ai. break-even is 0.72. nearly every mistake lives between 0.65 and 0.85.
-
-at a 1% false-positive rate it catches 62% of raid's ai text. pangram publishes 0.34% misses at 0.004% false positives. that's the gap, and it's two orders of magnitude.`,
-   alt: "a hand-drawn 0-to-1 number line with the 0.65-0.85 stretch inked red and labelled “every mistake lives here”."},
-  {n: "4/5", file: {h: "4-short-text.png",   v: "4-short-text.png"},
-   tweet: `under 50 words it stops working. auc 0.698 — mean score for ai text 0.57, for human text 0.52. it doesn't refuse, it just guesses.
-
-the surprise went the other way: adversarial attacks do nothing to it. paraphrase costs 0.005 auc. synonym substitution makes ai text *more* detectable, because a thesaurus pass pushes prose further into the register it keys on.`,
+  {n: "#64", cid: "1a0c6519167", file: {h: "2-the-band.png", v: "2-the-band.png"},
+   line: "a score is an ordering, and everyone reads it as a verdict.",
+   alt: "a hand-drawn 0-to-1 number line with the 0.65-0.85 stretch inked red and labelled \u201cevery mistake lives here\u201d."},
+  {n: "no row yet", cid: "", file: {h: "4-short-text.png", v: "4-short-text.png"},
+   line: "",
    alt: "a full page with a green check beside a 40-word scrap with a red X over it."},
-  {n: "5/5", file: {h: "5-verdict-square.png", v: "5-verdict.png"},
-   tweet: `verdict: a good ranker, not a detector.
-
-useful as a cheap first pass in front of something expensive — escalate only the 0.65-0.85 band and you cover a quarter of the texts for ~$0.25 per thousand.
-
-not something to put in front of a student essay.`,
-   alt: "a black card with a yellow gauge, needle swung toward “machine”, reading “a good ranker. not a detector.”"},
+  {n: "#65", cid: "1a0c6519168", file: {h: "5-verdict-square.png", v: "5-verdict.png"},
+   line: "a good ranker, short of a detector.",
+   alt: "a black card with a yellow gauge, needle swung toward \u201cmachine\u201d, reading \u201ca good ranker. not a detector.\u201d"},
 ];
 
 const el = document.getElementById("frames");
@@ -97,9 +91,10 @@ function show(set) {
       if (!found[i]) return;
       const fig = document.createElement("figure");
       fig.className = "frame";
-      fig.innerHTML = `<div class="label n">${f.n}</div>
+      fig.innerHTML = `<div class="label n">${f.n}${f.cid ? `<span class="id"> \u00b7 ${f.cid}</span>` : ""}</div>
         <img class="shot" src="/frames/${set}/${f.file[set]}" alt="${f.alt}" loading="lazy">
-        <figcaption><p class="tweet">${f.tweet}</p>
+        <figcaption><p class="tweet">${f.line ||
+          '<span class="mute">no line in the deck for this frame yet.</span>'}</p>
         <p class="alt small mute">alt: ${f.alt}</p></figcaption>`;
       el.appendChild(fig);
     });
