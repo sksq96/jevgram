@@ -1,5 +1,21 @@
 # changelog
 
+## 2026-09-22 · the page, the frames, and the generation question
+- `web/`: one-box interface at jevgram.vercel.app — the exact Noul the study measured, key
+  server-side, per-IP rate limits, 8k-char cap, and the AUCs, the sub-50-word caveat and the
+  per-check cost printed next to the score. ~$0.00002 a check, 120-450ms.
+- `web/frames/`: the launch-review page, both orientations, each frame under the deck row it
+  carries. Captions follow `console-data/drafts.json` batch `jevgram`; four rows for five frames,
+  and the frame without one says so rather than carrying invented copy.
+- Deck assets hosted for other lanes: hue and qt drawings stay; three Superdark quote crops were
+  hosted with a `SOURCE.md` naming the essay and its authors, then pulled at the twitter lane's ask
+  — commit dropped from history, deployment deleted. Rule kept: someone else's prose does not live
+  here, and a URL that outlives the file it names is the failure mode.
+- `gen.py` / `gen.md`: can Jev generate text? No generation primitive; a forced Choice-per-word
+  decoder is worse than the bigram chain it rides on. The keeper is the judge test — 5/10 against
+  2/10 chance, mean confidence 0.66 when right and 0.23 when wrong. 101 calls, $0.0054.
+- Lane total: **$0.975** of Jev, 2 Pangram 3 calls.
+
 ## 2026-09-21 · the measurement
 First and only run of the lane, start to finish in one session.
 
