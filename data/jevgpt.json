@@ -1,0 +1,1361 @@
+[
+ {
+  "settings": {
+   "max_words": 10,
+   "seed": 0
+  },
+  "turns": [
+   {
+    "user": "why does everyone think ai detection works?",
+    "reply": "Because hype. Period. Period. None bullshit.",
+    "stop_reason": "max-words",
+    "seconds": 9.99,
+    "steps": [
+     {
+      "prefix": "",
+      "word": "because",
+      "top": [
+       {
+        "word": "because",
+        "p": 0.19
+       },
+       {
+        "word": "is",
+        "p": 0.09999999999999999
+       },
+       {
+        "word": "well",
+        "p": 0.08
+       },
+       {
+        "word": "reasons",
+        "p": 0.04
+       },
+       {
+        "word": "that",
+        "p": 0.04
+       },
+       {
+        "word": "not",
+        "p": 0.03
+       },
+       {
+        "word": "the",
+        "p": 0.03
+       },
+       {
+        "word": "believe",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.04,
+      "latency_ms": 1200.0,
+      "input_tokens": 146733,
+      "total_input_tokens": 146733,
+      "total_dollars": 0.0062
+     },
+     {
+      "prefix": "Because",
+      "word": "hype",
+      "top": [
+       {
+        "word": "hype",
+        "p": 0.09999999999999999
+       },
+       {
+        "word": "marketing",
+        "p": 0.09
+       },
+       {
+        "word": "reasons",
+        "p": 0.06999999999999999
+       },
+       {
+        "word": "that",
+        "p": 0.04
+       },
+       {
+        "word": "is",
+        "p": 0.04
+       },
+       {
+        "word": "not",
+        "p": 0.03
+       },
+       {
+        "word": "they",
+        "p": 0.03
+       },
+       {
+        "word": "does",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.02,
+      "latency_ms": 1025.8,
+      "input_tokens": 146729,
+      "total_input_tokens": 293462,
+      "total_dollars": 0.0123
+     },
+     {
+      "prefix": "Because hype",
+      "word": ".",
+      "top": [
+       {
+        "word": ".",
+        "p": 0.08
+       },
+       {
+        "word": "?",
+        "p": 0.06999999999999999
+       },
+       {
+        "word": "bullshit",
+        "p": 0.05
+       },
+       {
+        "word": "marketing",
+        "p": 0.04
+       },
+       {
+        "word": "no",
+        "p": 0.04
+       },
+       {
+        "word": "period",
+        "p": 0.04
+       },
+       {
+        "word": "but",
+        "p": 0.03
+       },
+       {
+        "word": "that",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.21,
+      "latency_ms": 955.8,
+      "input_tokens": 146727,
+      "total_input_tokens": 440189,
+      "total_dollars": 0.0185
+     },
+     {
+      "prefix": "Because hype.",
+      "word": "period",
+      "top": [
+       {
+        "word": "period",
+        "p": 0.05
+       },
+       {
+        "word": "hype",
+        "p": 0.17
+       },
+       {
+        "word": "marketing",
+        "p": 0.04
+       },
+       {
+        "word": "but",
+        "p": 0.03
+       },
+       {
+        "word": "bullshit",
+        "p": 0.03
+       },
+       {
+        "word": "for",
+        "p": 0.02
+       },
+       {
+        "word": "shit",
+        "p": 0.02
+       },
+       {
+        "word": "sucks",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.24,
+      "latency_ms": 933.9,
+      "input_tokens": 146724,
+      "total_input_tokens": 586913,
+      "total_dollars": 0.0247
+     },
+     {
+      "prefix": "Because hype. Period",
+      "word": ".",
+      "top": [
+       {
+        "word": ".",
+        "p": 0.21000000000000002
+       },
+       {
+        "word": "\\n",
+        "p": 0.04
+       },
+       {
+        "word": "bullshit",
+        "p": 0.03
+       },
+       {
+        "word": "?",
+        "p": 0.03
+       },
+       {
+        "word": "but",
+        "p": 0.02
+       },
+       {
+        "word": "sham",
+        "p": 0.02
+       },
+       {
+        "word": "is",
+        "p": 0.02
+       },
+       {
+        "word": "and",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.28,
+      "latency_ms": 947.6,
+      "input_tokens": 146725,
+      "total_input_tokens": 733638,
+      "total_dollars": 0.0308
+     },
+     {
+      "prefix": "Because hype. Period.",
+      "word": "period",
+      "top": [
+       {
+        "word": "period",
+        "p": 0.15000000000000002
+       },
+       {
+        "word": "?",
+        "p": 0.03
+       },
+       {
+        "word": "bullshit",
+        "p": 0.03
+       },
+       {
+        "word": "\\n",
+        "p": 0.03
+       },
+       {
+        "word": "just",
+        "p": 0.02
+       },
+       {
+        "word": "none",
+        "p": 0.02
+       },
+       {
+        "word": "ends",
+        "p": 0.02
+       },
+       {
+        "word": "media",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.31,
+      "latency_ms": 904.1,
+      "input_tokens": 146732,
+      "total_input_tokens": 880370,
+      "total_dollars": 0.037
+     },
+     {
+      "prefix": "Because hype. Period. Period",
+      "word": ".",
+      "top": [
+       {
+        "word": ".",
+        "p": 0.13
+       },
+       {
+        "word": "bullshit",
+        "p": 0.05
+       },
+       {
+        "word": "\\n",
+        "p": 0.03
+       },
+       {
+        "word": "none",
+        "p": 0.03
+       },
+       {
+        "word": "hype",
+        "p": 0.08
+       },
+       {
+        "word": "point",
+        "p": 0.02
+       },
+       {
+        "word": "obviously",
+        "p": 0.02
+       },
+       {
+        "word": "bah",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.35,
+      "latency_ms": 1110.8,
+      "input_tokens": 146739,
+      "total_input_tokens": 1027109,
+      "total_dollars": 0.0431
+     },
+     {
+      "prefix": "Because hype. Period. Period.",
+      "word": "none",
+      "top": [
+       {
+        "word": "none",
+        "p": 0.09
+       },
+       {
+        "word": "on",
+        "p": 0.02
+       },
+       {
+        "word": "end",
+        "p": 0.02
+       },
+       {
+        "word": "bull",
+        "p": 0.02
+       },
+       {
+        "word": "!",
+        "p": 0.02
+       },
+       {
+        "word": "bunk",
+        "p": 0.02
+       },
+       {
+        "word": "comma",
+        "p": 0.02
+       },
+       {
+        "word": "done",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.33,
+      "latency_ms": 907.5,
+      "input_tokens": 146739,
+      "total_input_tokens": 1173848,
+      "total_dollars": 0.0493
+     },
+     {
+      "prefix": "Because hype. Period. Period. None",
+      "word": "bullshit",
+      "top": [
+       {
+        "word": "bullshit",
+        "p": 0.09
+       },
+       {
+        "word": "no",
+        "p": 0.04
+       },
+       {
+        "word": "unfinished",
+        "p": 0.04
+       },
+       {
+        "word": "nothing",
+        "p": 0.03
+       },
+       {
+        "word": "nonsense",
+        "p": 0.03
+       },
+       {
+        "word": "shit",
+        "p": 0.03
+       },
+       {
+        "word": "sucks",
+        "p": 0.03
+       },
+       {
+        "word": "fantasy",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.22,
+      "latency_ms": 1044.6,
+      "input_tokens": 146751,
+      "total_input_tokens": 1320599,
+      "total_dollars": 0.0555
+     },
+     {
+      "prefix": "Because hype. Period. Period. None bullshit",
+      "word": ".",
+      "top": [
+       {
+        "word": ".",
+        "p": 0.19
+       },
+       {
+        "word": "shit",
+        "p": 0.03
+       },
+       {
+        "word": "bunk",
+        "p": 0.03
+       },
+       {
+        "word": "no",
+        "p": 0.03
+       },
+       {
+        "word": "work",
+        "p": 0.02
+       },
+       {
+        "word": "nan",
+        "p": 0.02
+       },
+       {
+        "word": "over",
+        "p": 0.02
+       },
+       {
+        "word": "useless",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.31,
+      "latency_ms": 956.1,
+      "input_tokens": 146770,
+      "total_input_tokens": 1467369,
+      "total_dollars": 0.0616
+     }
+    ]
+   }
+  ],
+  "totals": {
+   "turns": 1,
+   "seconds": 10.07,
+   "input_tokens": 1467369,
+   "calls": 60,
+   "dollars": 0.0616
+  }
+ },
+ {
+  "settings": {
+   "max_words": 10,
+   "seed": 0
+  },
+  "turns": [
+   {
+    "user": "write one line about the sea at night",
+    "reply": "Is does is meaningless. Dark. Silent. Nan",
+    "stop_reason": "max-words",
+    "seconds": 9.37,
+    "steps": [
+     {
+      "prefix": "",
+      "word": "is",
+      "top": [
+       {
+        "word": "is",
+        "p": 0.34
+       },
+       {
+        "word": "the",
+        "p": 0.2
+       },
+       {
+        "word": "sleeps",
+        "p": 0.05
+       },
+       {
+        "word": "a",
+        "p": 0.05
+       },
+       {
+        "word": "dark",
+        "p": 0.05
+       },
+       {
+        "word": "black",
+        "p": 0.03
+       },
+       {
+        "word": "was",
+        "p": 0.02
+       },
+       {
+        "word": "reflects",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.05,
+      "latency_ms": 1173.7,
+      "input_tokens": 146763,
+      "total_input_tokens": 146763,
+      "total_dollars": 0.0062
+     },
+     {
+      "prefix": "Is",
+      "word": "does",
+      "top": [
+       {
+        "word": "does",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "is",
+        "p": 0.31
+       },
+       {
+        "word": "the",
+        "p": 0.05
+       },
+       {
+        "word": "seems",
+        "p": 0.04
+       },
+       {
+        "word": "be",
+        "p": 0.04
+       },
+       {
+        "word": "?",
+        "p": 0.04
+       },
+       {
+        "word": "a",
+        "p": 0.03
+       },
+       {
+        "word": "sleeps",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.02,
+      "latency_ms": 907.5,
+      "input_tokens": 146729,
+      "total_input_tokens": 293492,
+      "total_dollars": 0.0123
+     },
+     {
+      "prefix": "Is does",
+      "word": "is",
+      "top": [
+       {
+        "word": "is",
+        "p": 0.24000000000000002
+       },
+       {
+        "word": "unintelligible",
+        "p": 0.06999999999999999
+       },
+       {
+        "word": "the",
+        "p": 0.05
+       },
+       {
+        "word": "sleeps",
+        "p": 0.04
+       },
+       {
+        "word": "seems",
+        "p": 0.04
+       },
+       {
+        "word": "silent",
+        "p": 0.03
+       },
+       {
+        "word": "calm",
+        "p": 0.03
+       },
+       {
+        "word": "was",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.03,
+      "latency_ms": 868.1,
+      "input_tokens": 146726,
+      "total_input_tokens": 440218,
+      "total_dollars": 0.0185
+     },
+     {
+      "prefix": "Is does is",
+      "word": "meaningless",
+      "top": [
+       {
+        "word": "meaningless",
+        "p": 0.11
+       },
+       {
+        "word": "gibberish",
+        "p": 0.09999999999999999
+       },
+       {
+        "word": "garbled",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "none",
+        "p": 0.04
+       },
+       {
+        "word": "unintelligible",
+        "p": 0.04
+       },
+       {
+        "word": "do",
+        "p": 0.04
+       },
+       {
+        "word": "under",
+        "p": 0.03
+       },
+       {
+        "word": "its",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.03,
+      "latency_ms": 910.2,
+      "input_tokens": 146737,
+      "total_input_tokens": 586955,
+      "total_dollars": 0.0247
+     },
+     {
+      "prefix": "Is does is meaningless",
+      "word": ".",
+      "top": [
+       {
+        "word": ".",
+        "p": 0.08
+       },
+       {
+        "word": "it",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "nan",
+        "p": 0.04
+       },
+       {
+        "word": "\\n",
+        "p": 0.04
+       },
+       {
+        "word": "does",
+        "p": 0.09
+       },
+       {
+        "word": "at",
+        "p": 0.03
+       },
+       {
+        "word": "its",
+        "p": 0.03
+       },
+       {
+        "word": "thi",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.09,
+      "latency_ms": 1055.4,
+      "input_tokens": 146761,
+      "total_input_tokens": 733716,
+      "total_dollars": 0.0308
+     },
+     {
+      "prefix": "Is does is meaningless.",
+      "word": "dark",
+      "top": [
+       {
+        "word": "dark",
+        "p": 0.04
+       },
+       {
+        "word": "is",
+        "p": 0.19
+       },
+       {
+        "word": "it",
+        "p": 0.03
+       },
+       {
+        "word": "silent",
+        "p": 0.03
+       },
+       {
+        "word": "and",
+        "p": 0.03
+       },
+       {
+        "word": "the",
+        "p": 0.03
+       },
+       {
+        "word": "none",
+        "p": 0.03
+       },
+       {
+        "word": "beautiful",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.17,
+      "latency_ms": 913.6,
+      "input_tokens": 146766,
+      "total_input_tokens": 880482,
+      "total_dollars": 0.037
+     },
+     {
+      "prefix": "Is does is meaningless. Dark",
+      "word": ".",
+      "top": [
+       {
+        "word": ".",
+        "p": 0.15000000000000002
+       },
+       {
+        "word": "darkness",
+        "p": 0.09
+       },
+       {
+        "word": "black",
+        "p": 0.04
+       },
+       {
+        "word": "and",
+        "p": 0.03
+       },
+       {
+        "word": "silent",
+        "p": 0.03
+       },
+       {
+        "word": "in",
+        "p": 0.03
+       },
+       {
+        "word": "the",
+        "p": 0.03
+       },
+       {
+        "word": "dark",
+        "p": 0.18000000000000002
+       }
+      ],
+      "complete_noul": 0.23,
+      "latency_ms": 828.6,
+      "input_tokens": 146760,
+      "total_input_tokens": 1027242,
+      "total_dollars": 0.0431
+     },
+     {
+      "prefix": "Is does is meaningless. Dark.",
+      "word": "silent",
+      "top": [
+       {
+        "word": "silent",
+        "p": 0.05
+       },
+       {
+        "word": "nan",
+        "p": 0.03
+       },
+       {
+        "word": "none",
+        "p": 0.03
+       },
+       {
+        "word": "of",
+        "p": 0.02
+       },
+       {
+        "word": "black",
+        "p": 0.02
+       },
+       {
+        "word": "darkness",
+        "p": 0.02
+       },
+       {
+        "word": "infinite",
+        "p": 0.02
+       },
+       {
+        "word": "blue",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.36,
+      "latency_ms": 904.2,
+      "input_tokens": 146768,
+      "total_input_tokens": 1174010,
+      "total_dollars": 0.0493
+     },
+     {
+      "prefix": "Is does is meaningless. Dark. Silent",
+      "word": ".",
+      "top": [
+       {
+        "word": ".",
+        "p": 0.18000000000000002
+       },
+       {
+        "word": "\\n",
+        "p": 0.04
+       },
+       {
+        "word": "it",
+        "p": 0.04
+       },
+       {
+        "word": "dark",
+        "p": 0.13
+       },
+       {
+        "word": "none",
+        "p": 0.03
+       },
+       {
+        "word": "black",
+        "p": 0.03
+       },
+       {
+        "word": "end",
+        "p": 0.02
+       },
+       {
+        "word": "silence",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.37,
+      "latency_ms": 923.9,
+      "input_tokens": 146776,
+      "total_input_tokens": 1320786,
+      "total_dollars": 0.0555
+     },
+     {
+      "prefix": "Is does is meaningless. Dark. Silent.",
+      "word": "nan",
+      "top": [
+       {
+        "word": "nan",
+        "p": 0.05
+       },
+       {
+        "word": "none",
+        "p": 0.04
+       },
+       {
+        "word": "period",
+        "p": 0.03
+       },
+       {
+        "word": "still",
+        "p": 0.03
+       },
+       {
+        "word": ",",
+        "p": 0.03
+       },
+       {
+        "word": "sleeps",
+        "p": 0.02
+       },
+       {
+        "word": "the",
+        "p": 0.02
+       },
+       {
+        "word": "quiet",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.37,
+      "latency_ms": 880.1,
+      "input_tokens": 146767,
+      "total_input_tokens": 1467553,
+      "total_dollars": 0.0616
+     }
+    ]
+   }
+  ],
+  "totals": {
+   "turns": 1,
+   "seconds": 9.46,
+   "input_tokens": 1467553,
+   "calls": 60,
+   "dollars": 0.0616
+  }
+ },
+ {
+  "settings": {
+   "max_words": 10,
+   "seed": 0
+  },
+  "turns": [
+   {
+    "user": "what happens when agents start paying their own bills?",
+    "reply": "Dunno depends on on context depending of or scenario?",
+    "stop_reason": "max-words",
+    "seconds": 10.13,
+    "steps": [
+     {
+      "prefix": "",
+      "word": "dunno",
+      "top": [
+       {
+        "word": "dunno",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "well",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "is",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "?",
+        "p": 0.05
+       },
+       {
+        "word": "be",
+        "p": 0.04
+       },
+       {
+        "word": "depends",
+        "p": 0.04
+       },
+       {
+        "word": "collapses",
+        "p": 0.04
+       },
+       {
+        "word": "bankruptcy",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.08,
+      "latency_ms": 1284.0,
+      "input_tokens": 146731,
+      "total_input_tokens": 146731,
+      "total_dollars": 0.0062
+     },
+     {
+      "prefix": "Dunno",
+      "word": "depends",
+      "top": [
+       {
+        "word": "depends",
+        "p": 0.09999999999999999
+       },
+       {
+        "word": "?",
+        "p": 0.06999999999999999
+       },
+       {
+        "word": ".",
+        "p": 0.05
+       },
+       {
+        "word": "dunno",
+        "p": 0.41000000000000003
+       },
+       {
+        "word": "unknown",
+        "p": 0.03
+       },
+       {
+        "word": "the",
+        "p": 0.03
+       },
+       {
+        "word": "know",
+        "p": 0.02
+       },
+       {
+        "word": "happens",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.11,
+      "latency_ms": 957.5,
+      "input_tokens": 146728,
+      "total_input_tokens": 293459,
+      "total_dollars": 0.0123
+     },
+     {
+      "prefix": "Dunno depends",
+      "word": "on",
+      "top": [
+       {
+        "word": "on",
+        "p": 0.36
+       },
+       {
+        "word": "up",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "of",
+        "p": 0.05
+       },
+       {
+        "word": "the",
+        "p": 0.03
+       },
+       {
+        "word": "depending",
+        "p": 0.03
+       },
+       {
+        "word": "context",
+        "p": 0.02
+       },
+       {
+        "word": "depend",
+        "p": 0.02
+       },
+       {
+        "word": "how",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.07,
+      "latency_ms": 995.9,
+      "input_tokens": 146718,
+      "total_input_tokens": 440177,
+      "total_dollars": 0.0185
+     },
+     {
+      "prefix": "Dunno depends on",
+      "word": "on",
+      "top": [
+       {
+        "word": "on",
+        "p": 0.56
+       },
+       {
+        "word": "depends",
+        "p": 0.15000000000000002
+       },
+       {
+        "word": "depending",
+        "p": 0.03
+       },
+       {
+        "word": "specifics",
+        "p": 0.03
+       },
+       {
+        "word": "context",
+        "p": 0.02
+       },
+       {
+        "word": "how",
+        "p": 0.02
+       },
+       {
+        "word": "situations",
+        "p": 0.02
+       },
+       {
+        "word": "of",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.03,
+      "latency_ms": 940.1,
+      "input_tokens": 146725,
+      "total_input_tokens": 586902,
+      "total_dollars": 0.0246
+     },
+     {
+      "prefix": "Dunno depends on on",
+      "word": "context",
+      "top": [
+       {
+        "word": "context",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "upon",
+        "p": 0.04
+       },
+       {
+        "word": "case",
+        "p": 0.04
+       },
+       {
+        "word": "circumstances",
+        "p": 0.04
+       },
+       {
+        "word": "on",
+        "p": 0.41000000000000003
+       },
+       {
+        "word": "depend",
+        "p": 0.03
+       },
+       {
+        "word": "of",
+        "p": 0.03
+       },
+       {
+        "word": "depends",
+        "p": 0.09999999999999999
+       }
+      ],
+      "complete_noul": 0.03,
+      "latency_ms": 1149.7,
+      "input_tokens": 146710,
+      "total_input_tokens": 733612,
+      "total_dollars": 0.0308
+     },
+     {
+      "prefix": "Dunno depends on on context",
+      "word": "depending",
+      "top": [
+       {
+        "word": "depending",
+        "p": 0.05
+       },
+       {
+        "word": "?",
+        "p": 0.04
+       },
+       {
+        "word": "context",
+        "p": 0.27
+       },
+       {
+        "word": "clarify",
+        "p": 0.03
+       },
+       {
+        "word": "in",
+        "p": 0.03
+       },
+       {
+        "word": "specific",
+        "p": 0.03
+       },
+       {
+        "word": "is",
+        "p": 0.03
+       },
+       {
+        "word": "specify",
+        "p": 0.03
+       }
+      ],
+      "complete_noul": 0.1,
+      "latency_ms": 996.1,
+      "input_tokens": 146749,
+      "total_input_tokens": 880361,
+      "total_dollars": 0.037
+     },
+     {
+      "prefix": "Dunno depends on on context depending",
+      "word": "of",
+      "top": [
+       {
+        "word": "of",
+        "p": 0.060000000000000005
+       },
+       {
+        "word": "in",
+        "p": 0.05
+       },
+       {
+        "word": "?",
+        "p": 0.04
+       },
+       {
+        "word": "case",
+        "p": 0.03
+       },
+       {
+        "word": ".",
+        "p": 0.03
+       },
+       {
+        "word": "differ",
+        "p": 0.03
+       },
+       {
+        "word": "setting",
+        "p": 0.03
+       },
+       {
+        "word": "the",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.06,
+      "latency_ms": 990.7,
+      "input_tokens": 146749,
+      "total_input_tokens": 1027110,
+      "total_dollars": 0.0431
+     },
+     {
+      "prefix": "Dunno depends on on context depending of",
+      "word": "or",
+      "top": [
+       {
+        "word": "or",
+        "p": 0.05
+       },
+       {
+        "word": "depending",
+        "p": 0.16
+       },
+       {
+        "word": "context",
+        "p": 0.13
+       },
+       {
+        "word": "case",
+        "p": 0.03
+       },
+       {
+        "word": "setting",
+        "p": 0.02
+       },
+       {
+        "word": "whether",
+        "p": 0.02
+       },
+       {
+        "word": "topic",
+        "p": 0.02
+       },
+       {
+        "word": "situation",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.03,
+      "latency_ms": 914.5,
+      "input_tokens": 146736,
+      "total_input_tokens": 1173846,
+      "total_dollars": 0.0493
+     },
+     {
+      "prefix": "Dunno depends on on context depending of or",
+      "word": "scenario",
+      "top": [
+       {
+        "word": "scenario",
+        "p": 0.04
+       },
+       {
+        "word": "their",
+        "p": 0.04
+       },
+       {
+        "word": "garbled",
+        "p": 0.04
+       },
+       {
+        "word": "of",
+        "p": 0.08
+       },
+       {
+        "word": "situation",
+        "p": 0.03
+       },
+       {
+        "word": "a",
+        "p": 0.03
+       },
+       {
+        "word": "in",
+        "p": 0.03
+       },
+       {
+        "word": "up",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.03,
+      "latency_ms": 929.7,
+      "input_tokens": 146757,
+      "total_input_tokens": 1320603,
+      "total_dollars": 0.0555
+     },
+     {
+      "prefix": "Dunno depends on on context depending of or scenario",
+      "word": "?",
+      "top": [
+       {
+        "word": "?",
+        "p": 0.04
+       },
+       {
+        "word": "in",
+        "p": 0.04
+       },
+       {
+        "word": "for",
+        "p": 0.04
+       },
+       {
+        "word": "or",
+        "p": 0.09
+       },
+       {
+        "word": "and",
+        "p": 0.03
+       },
+       {
+        "word": "scenarios",
+        "p": 0.03
+       },
+       {
+        "word": "depends",
+        "p": 0.09
+       },
+       {
+        "word": "vary",
+        "p": 0.02
+       }
+      ],
+      "complete_noul": 0.07,
+      "latency_ms": 956.1,
+      "input_tokens": 146783,
+      "total_input_tokens": 1467386,
+      "total_dollars": 0.0616
+     }
+    ]
+   }
+  ],
+  "totals": {
+   "turns": 1,
+   "seconds": 10.34,
+   "input_tokens": 1467386,
+   "calls": 60,
+   "dollars": 0.0616
+  }
+ }
+]

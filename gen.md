@@ -104,7 +104,16 @@ else produce candidates, have Jev rank them, and act only where it is confident.
 the job; the cookbook's re-ranking result (top-1 5% → 18%) is the same finding on a task it was
 built for.
 
-## 5. So: what to do with "can we use jev to generate text"
+## 5. Someone else built the same loop, much harder
+
+bewinxed/jevgpt does this at 20,000 words instead of 180, with a run-off round to make sharded
+Choice probabilities comparable and three measured repetition penalties. Run here and written up in
+[jevgpt.md](jevgpt.md): same conclusion, better engineering, and one correction to section 4 —
+a Noul judge is *blind* at character granularity (1/15 in their measurement), so "judge, not
+writer" holds only where the candidates differ in meaning. The configuration that wins in both
+their numbers and mine is propose-then-judge.
+
+## 6. So: what to do with "can we use jev to generate text"
 
 You can, in the sense that a Choice loop emits words. You should not: the output is worse than the
 bigram chain it is riding on, at ~$0.00003 a word and 400ms a word. The thing to build instead is
