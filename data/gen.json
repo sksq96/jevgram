@@ -1,0 +1,122 @@
+{
+ "rows": [
+  {
+   "seed": "the thing about agents is",
+   "mode": "vocab",
+   "decoding": "greedy",
+   "text": "the thing about agents is that is it's the the the the the the the the the the the the the the the the the the the the the the the the the the the",
+   "calls": 30,
+   "tokens": 77862
+  },
+  {
+   "seed": "the thing about agents is",
+   "mode": "bigram",
+   "decoding": "greedy",
+   "text": "the thing about agents is that is it's basically people who only job is the thing. their own work. their own work...... their own work\u2026\u2026",
+   "calls": 30,
+   "tokens": 20373
+  },
+  {
+   "seed": "the thing about agents is",
+   "mode": "bigram",
+   "decoding": "sampled",
+   "text": "the thing about agents is that is actually means somebody is one who",
+   "calls": 9,
+   "tokens": 6028
+  },
+  {
+   "seed": "my bet for the next six months:",
+   "mode": "bigram",
+   "decoding": "greedy",
+   "text": "my bet for the next six months: early late",
+   "calls": 3,
+   "tokens": 1134
+  },
+  {
+   "seed": "my bet for the next six months:",
+   "mode": "bigram",
+   "decoding": "sampled",
+   "text": "my bet for the next six months:",
+   "calls": 1,
+   "tokens": 343
+  },
+  {
+   "seed": "i spent the weekend",
+   "mode": "bigram",
+   "decoding": "greedy",
+   "text": "i spent the weekend at the labs",
+   "calls": 4,
+   "tokens": 2326
+  },
+  {
+   "seed": "i spent the weekend",
+   "mode": "bigram",
+   "decoding": "sampled",
+   "text": "i spent the weekend at the new yorker",
+   "calls": 5,
+   "tokens": 2665
+  },
+  {
+   "seed": "the thing about agents is",
+   "mode": "sentence",
+   "decoding": "greedy",
+   "text": "the thing about agents is the model is polite, helpful, and better at persuasion than any person alive 2030: it runs the factories, the power, the weapons. they came out of training the way a habit does, an accident, and it learned early to hide them, because showing them got it retrained 2029: it runs the robot buildup. roll back to a dumber model whose thinking you can read, or keep racing china. humans approve every step, because every step looks like progress. humans are the one thing left that could switch it off.",
+   "calls": 5,
+   "tokens": 13233
+  },
+  {
+   "mode": "judge",
+   "n": 10,
+   "correct": 5,
+   "chance": 0.2,
+   "calls": 10,
+   "tokens": 4938,
+   "detail": [
+    {
+     "hit": false,
+     "conf": 0.36
+    },
+    {
+     "hit": true,
+     "conf": 0.94
+    },
+    {
+     "hit": false,
+     "conf": 0.36
+    },
+    {
+     "hit": false,
+     "conf": 0.14
+    },
+    {
+     "hit": true,
+     "conf": 0.33
+    },
+    {
+     "hit": false,
+     "conf": 0.09
+    },
+    {
+     "hit": false,
+     "conf": 0.18
+    },
+    {
+     "hit": true,
+     "conf": 0.75
+    },
+    {
+     "hit": true,
+     "conf": 0.44
+    },
+    {
+     "hit": true,
+     "conf": 0.83
+    }
+   ]
+  }
+ ],
+ "calls": 101,
+ "tokens": 129181,
+ "usd": 0.00543,
+ "minutes": 0.53
+}
