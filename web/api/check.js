@@ -71,14 +71,19 @@ export default async function handler(req, res) {
         body: JSON.stringify({ state: text, model: MODEL, questions: QUESTION }),
       });
       if (r.ok) { out = await r.json(); break; }
-      last = `${r.status} ${(await r.text()).slice(0, 160)}`;
+      const body = (await r.text()).slice(0, 200);
+      if (r.status === 402 || /billing|credit/i.test(body)) {
+        return res.status(503).json({ error: "the jev account is out of credits, so checks are " +
+          "paused. the numbers on this page still stand — they were measured before the meter ran out." });
+      }
+      last = String(r.status);           // never echo an upstream body to the browser
       if (![429, 500, 502, 503, 529].includes(r.status)) break;
     } catch (e) {
       last = String(e).slice(0, 160);
     }
     await new Promise(s => setTimeout(s, 400 * 2 ** i));
   }
-  if (!out) return res.status(502).json({ error: `jev: ${last}` });
+  if (!out) return res.status(502).json({ error: `jev is not answering (${last}). try again in a minute.` });
 
   const score = out.answers.ai.noul;
   const words = (text.match(/\S+/g) || []).length;
