@@ -14,7 +14,11 @@
 - `gen.py` / `gen.md`: can Jev generate text? No generation primitive; a forced Choice-per-word
   decoder is worse than the bigram chain it rides on. The keeper is the judge test — 5/10 against
   2/10 chance, mean confidence 0.66 when right and 0.23 when wrong. 101 calls, $0.0054.
-- Lane total: **$0.975** of Jev, 2 Pangram 3 calls.
+- `jevgpt.md`: bewinxed/jevgpt read and run as written — the same selection loop at 20k words, 6
+  calls and ~$0.008 a word, with a run-off round that repairs sharded Choice probabilities. Their
+  character-level table (noul judge 1/15, propose-then-judge 9/15) narrowed gen.md's verdict from
+  "judge, not writer" to "propose, then judge". 30 words, 180 calls, $0.185.
+- Lane total: **$1.16** of Jev, 2 Pangram 3 calls.
 
 ## 2026-09-21 · the measurement
 First and only run of the lane, start to finish in one session.
