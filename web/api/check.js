@@ -34,11 +34,12 @@ let dayStart = Date.now(), dayCount = 0;
 function limited(ip) {
   const now = Date.now();
   if (now - dayStart > 864e5) { dayStart = now; dayCount = 0; hits.clear(); }
-  if (++dayCount > PER_INSTANCE_DAY) return "this page has hit its daily budget. try tomorrow.";
+  if (dayCount >= PER_INSTANCE_DAY) return "this page has hit its daily budget. try tomorrow.";
   const seen = (hits.get(ip) || []).filter(t => now - t < 864e5);
   if (seen.length >= PER_IP_DAY) return "that is enough checks for one day from this address.";
   if (seen.filter(t => now - t < PER_IP.window).length >= PER_IP.max)
     return "slow down: 10 checks per 10 minutes.";
+  dayCount++;                            // only admitted checks spend the instance's budget
   seen.push(now);
   hits.set(ip, seen);
   if (hits.size > 5000) hits.clear();

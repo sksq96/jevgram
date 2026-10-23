@@ -1,5 +1,11 @@
 # changelog
 
+## 2026-10-23 · the instance budget counts only checks it answers
+- `web/api/check.js`: the per-instance daily cap was spent before the per-IP checks ran, so checks
+  the per-IP limit refused still counted; one address retrying past its 10 could use up the
+  instance's 1,500 a day for everyone. Now only admitted checks count. `web/test/limits.test.mjs`
+  (`node --test web/test/limits.test.mjs`, no deps) covers both the fix and the cap.
+
 ## 2026-09-22 · the page, the frames, and the generation question
 - `web/`: one-box interface at jevgram.vercel.app — the exact Noul the study measured, key
   server-side, per-IP rate limits, 8k-char cap, and the AUCs, the sub-50-word caveat and the
